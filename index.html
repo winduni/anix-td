@@ -79,7 +79,7 @@
         
         <!-- Start Section Slider -->
 		
-        <section id="home" class="slider">
+        <section id="home" class="slider elm">
             <div class="container">
                 <div class="row">
                     <!-- Start Navbar -->
@@ -170,7 +170,7 @@
                                         <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> 22 March 2017</span>
                                         <p>Описание...иеписаниеписаниеписаниеписаниеписаниеписаниеписаниеписаниеписание</p>
-                                        <a href="#" class="read">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        <a  href=".elm" class="read go_to">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                     </div><!-- /post-content -->
                                 </div><!-- /post -->
                             </div><!-- /col-md-4 -->
@@ -184,8 +184,8 @@
                                         <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> 22 March 2017</span>
                                         <p>Описание...</p>
-                                        <a href="#" class="read">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                    </div><!-- /post-content -->
+                                        <a href=".elm" class="read go_to">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								                                    </div><!-- /post-content -->
                                 </div><!-- /post -->
                             </div><!-- /col-md-4 -->
                             <div class="col-md-4">
@@ -198,7 +198,7 @@
                                         <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> 22 March 2017</span>
                                         <p>Описание...</p>
-                                        <a href="#" class="read">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        <a  href=".elm" class="read go_to">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                     </div><!-- /post-content -->
                                 </div><!-- /post -->
                             </div><!-- /col-md-4 -->
@@ -229,7 +229,7 @@
                                         <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> 22 March 2017</span>
                                         <p>Описание...иеписаниеписаниеписаниеписаниеписаниеписаниеписаниеписаниеписание</p>
-                                        <a href="#" class="read">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        <a  href=".elm" class="read go_to">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                     </div><!-- /post-content -->
                                 </div><!-- /post -->
                             </div><!-- /col-md-4 -->
@@ -243,7 +243,7 @@
                                         <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> 22 March 2017</span>
                                         <p>Описание...</p>
-                                        <a href="#" class="read">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        <a  href=".elm" class="read go_to">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                     </div><!-- /post-content -->
                                 </div><!-- /post -->
                             </div><!-- /col-md-4 -->
@@ -257,7 +257,7 @@
                                         <span><i class="fa fa-user" aria-hidden="true"></i> Admin</span>
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> 22 March 2017</span>
                                         <p>Описание...</p>
-                                        <a href="#" class="read">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        <a href=".elm" class="read go_to">Подробнее <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                     </div><!-- /post-content -->
                                 </div><!-- /post -->
                             </div><!-- /col-md-4 -->
@@ -533,6 +533,15 @@ $(document).ready(function(){
             scrollTop: 0
         }, 400);
         return false;
+    });
+});
+$(document).ready(function(){
+    $('.go_to').click( function(){ // ловим клик по ссылке с классом go_to
+	var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+        if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+	    $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
+        }
+	    return false; // выключаем стандартное действие
     });
 });
 </script>

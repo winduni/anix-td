@@ -540,10 +540,13 @@ button.btn:hover::before {
     -moz-transition: .5s;
     -ms-transition: .5s;
     transition: .5s;
+	background: #ff2b42;
+	border-radius: 20px 0 0 20px;
+	
 }
 
 .slider .navbar ul span a{
-    color: #444;
+    color: #fff;
     -webkit-transition: .5s;
     -moz-transition: .5s;
     -ms-transition: .5s;
@@ -997,7 +1000,7 @@ button.btn:hover::before {
 *   10. Contact
 *----------------------------------------------*/
 .section-contact{
-    background-image: url(http://placehold.it/1920x1000);
+    background-image: url(../../img/silyet.jpg);
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
